@@ -10,6 +10,8 @@ export default class Profile extends Component {
     let myProfile = getProfile();
     console.log(myProfile);
 
+
+
     this.setState = {
       profile: myProfile
     };
@@ -20,8 +22,8 @@ export default class Profile extends Component {
       <div>
         {this.state.profile ? (
           <>
-            <div>{this.state.name}</div>
-            <div>{this.state.bio}</div>
+            <div>{this.state.profile.name}</div>
+            <div>{this.state.profile.bio}</div>
           </>
         ) : (
           <h1>Loading...</h1>

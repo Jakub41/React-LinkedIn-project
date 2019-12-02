@@ -9,15 +9,18 @@ export const getProfile = createProfileAPIQUery(() => {
   return `${API_URL}profile/me`;
 });
 
-
-export const addComment = createProfileAPIQUery(() => {
+//calling, pass in body, and no other arguments are needed for 'params'
+//addProfile(JSON.stringify(body)).then(...);
+export const add = createProfileAPIQUery(() => {
   return `${API_URL}/profile`;
 }, "POST");
 
-export const updateComment = createProfileAPIQUery(id => {
+//calling, pass in body, and 'Id' will end up as part of 'params'
+//updateProfile(JSON.stringify(body), Id);
+export const updateProfile = createProfileAPIQUery(id => {
   return `${API_URL}/profile/${id}`;
 }, "PUT");
 
-export const deleteComment = createProfileAPIQUery(id => {
+export const deleteProfile = createProfileAPIQUery(id => {
   return `${API_URL}/profile/${id}`;
 }, "delete");

@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import { FaLinkedin , FaSearch , FaHome ,  FaNetworkWired, FaSuitcase, FaArrowCircleDown} from 'react-icons/fa';
+import React, { Component } from 'react';
+import { FaLinkedin , FaSearch , FaHome ,  FaNetworkWired , FaSuitcase,
+ FaArrowCircleDown} from 'react-icons/fa';
+import { TiMessages} from 'react-icons/ti';
 import { IoIosNotificationsOutline,} from  "react-icons/io";
-import {TiMessages } from 'react-icons/ti';
 import { Input, Navbar , NavbarBrand , NavItem , NavLink,} from 'reactstrap';
-
-const NavBar = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggle = () => setIsOpen(!isOpen);
-  
-    return (
+class NavBar extends Component {
+    state = {
+        search: "",
+    }
+    render() {
+        return (
             <div>
-            <Navbar color="dark" light expand="md"></Navbar>
+            <Navbar color="Dark" light expand="md"></Navbar>
             <NavbarBrand><FaLinkedin /></NavbarBrand>
+            <Input type="text" placeholder= " <FaSearch />search"> </Input> 
             <NavItem>
-            <NavLink href="/Home/"><FaHome /></NavLink>
+            <NavLink><FaHome /></NavLink>
             </NavItem>
             <NavItem>
             <NavLink><FaNetworkWired /></NavLink>
@@ -36,5 +37,6 @@ const NavBar = (props) => {
             </div>
         );
     }
+}
 
 export default NavBar;

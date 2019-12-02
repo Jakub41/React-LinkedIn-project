@@ -1,29 +1,30 @@
 import React, { Component } from "react";
 import { getProfile } from "../Services/ProfileCRUD";
+import { Container } from "reactstrap"
 
 export default class Profile extends Component {
   state = {
-    profile: null
+    profile: []
   };
 
   componentDidMount = async () => {
-    let myProfile = getProfile();
-    console.log(myProfile);
-
-
-
-    this.setState = {
-      profile: myProfile
-    };
+    getProfile().then(
+      data =>
+        (this.setState = {
+          profile: data
+        })
+    );
+    console.log();
   };
 
   render() {
     return (
       <div>
-        {this.state.profile ? (
+        {this.state.data ? (
           <>
             <div>{this.state.profile.name}</div>
             <div>{this.state.profile.bio}</div>
+            <img src={this.state.profile.img} alt="profile" />
           </>
         ) : (
           <h1>Loading...</h1>

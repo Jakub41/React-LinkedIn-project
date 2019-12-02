@@ -1,6 +1,6 @@
 import { API_USERNAME, API_PASSWORD } from "./ApiUtils";
 
-export const createProfileAPIQUery = (urlGenerator, method = "GET") => async (
+export const createProfileAPIQuery = (urlGenerator, method = "GET") => async (
   body,
   ...params
 ) => {

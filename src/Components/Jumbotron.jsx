@@ -1,6 +1,7 @@
 import React from 'react';
-import { Jumbotron, Container, Button } from 'reactstrap';
+import { Jumbotron, Container,} from 'reactstrap';
 import { FaPencilAlt } from 'react-icons/fa';
+import Modal from './Modal';
 
 const Jumbo = (props) => {
     return (
@@ -12,7 +13,7 @@ const Jumbo = (props) => {
                     <p className="lead">User information.</p>
                     <div style={{ padding: '.5rem' }}>
                         <div className="mx-3 float-right"> <FaPencilAlt /></div>
-                        <Button className="float-right" color="primary">Add profile section </Button>
+                        <Modal className="float-right" color="primary">Add profile section </Modal>
                     </div>
             </Jumbotron>
             </Container>

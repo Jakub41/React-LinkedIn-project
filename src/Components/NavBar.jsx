@@ -14,7 +14,7 @@ import { Container, Input, Navbar, NavbarBrand, NavItem, NavLink, InputGroup, In
 const NavBar = props => {
     const [isOpen, setIsOpen] = useState(false);
 
-    nk const toggle = () => setIsOpen(!isOpen);
+    const toggle = () => setIsOpen(!isOpen);
 
     return (
         <>

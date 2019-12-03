@@ -12,9 +12,9 @@ const JumboComponent = (props) => {
                     <h6> User Location</h6>
                     <p className="lead">User information.</p>
                     <div style={{ padding: '.5rem' }}>
-                        <div className="mx-3 float-right"> <FaPencilAlt /></div>
-                        <Modal className="float-right" color="primary" />
-                    </div>
+                        <div className="mx-3 float-right">
+                        <Modal buttonLabel={<FaPencilAlt />} color="primary" />
+                    </div></div>
             </Jumbotron>
             </Container>
         </div>

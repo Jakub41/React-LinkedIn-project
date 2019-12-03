@@ -1,33 +1,22 @@
-import React from 'react';
-import {
-  Button, Modal, ModalBody, ModalHeader, ModalFooter,
-  Col, Row, Form, FormGroup, Label, Input
-} from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Row, Form, FormGroup, Label, Input } from 'reactstrap';
 
+const ModalComponent = (props) => {
+  const {
+    buttonLabel,
+    className
+  } = props;
 
-class ModalComp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: true
-    };
+  const [modal, setModal] = useState(false);
 
-    this.toggle = this.toggle.bind(this);
-  }
+  const toggle = () => setModal(!modal);
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <Button color='primary' onClick={this.toggle}>{this.props.buttonLabel}</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Add profile</ModalHeader>
-          <ModalBody>
+  return (
+    <div>
+      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+      <Modal isOpen={modal} toggle={toggle} className={className}>
+        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalBody>
             <Form>
               <Row form>
                 <Col md={6}>
@@ -72,15 +61,14 @@ class ModalComp extends React.Component {
                 </Col>
               </Row>
             </Form>
-          </ModalBody>
-          <ModalFooter>
-            <Button color='primary' onClick={this.toggle}>Update</Button>{' '}
-            <Button color='secondary' onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
-      </div>
-    );
-  }
+            </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+          <Button color="secondary" onClick={toggle}>Cancel</Button>
+        </ModalFooter>
+      </Modal>
+    </div>
+  );
 }
 
-export default <ModalComp buttonLabel='open modal' />;
+export default ModalComponent;

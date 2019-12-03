@@ -21,7 +21,7 @@ const ModalComponent = props => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
+    <>
       
       <Button color="primary" onClick={toggle}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
@@ -94,7 +94,7 @@ const ModalComponent = props => {
           <Button color="primary" onClick={toggle}>save</Button>
         </ModalFooter>
       </Modal>
-    </div>
+    </>
   );
 };
 

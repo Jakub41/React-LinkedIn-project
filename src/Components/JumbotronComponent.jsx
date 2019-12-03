@@ -4,22 +4,25 @@ import { FaPencilAlt } from "react-icons/fa";
 import Modal from "./Modal";
 
 class JumbotronComponent extends Component {
-
-    render() {
+  render() {
+    const { LinkedInData } = this.props;
     return (
-        <div>
-            <Container>
-            <Jumbotron>
-                    <h6>name</h6>
-                    <h6> User Location</h6>
-                    <p className="lead">User information.</p>
-                    <div style={{ padding: '.5rem' }}>
-                        <div className="mx-3 float-right">
-                        <Modal buttonLabel={<FaPencilAlt />} />
-                    </div></div>
-            </Jumbotron>
-            </Container>
-        </div>
+      <div>
+        <Container>
+          <Jumbotron>
+            <h6>
+              {LinkedInData.name} {LinkedInData.surname}
+            </h6>
+            <h6> {LinkedInData.area}</h6>
+            <p className="lead">{LinkedInData.bio}</p>
+            <div style={{ padding: ".5rem" }}>
+              <div className="mx-3 float-right">
+                <Modal buttonLabel={<FaPencilAlt />} />
+              </div>
+            </div>
+          </Jumbotron>
+        </Container>
+      </div>
     );
   }
 }

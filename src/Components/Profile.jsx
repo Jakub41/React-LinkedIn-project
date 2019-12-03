@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getProfile } from "../Services/ProfileCRUD";
+import { Jumbotron } from "./Jumbotron"
 
 export default class Header extends Component {
   constructor(...props) {
@@ -35,7 +36,7 @@ export default class Header extends Component {
       //     <h1>Loading...</h1>
       //   )}
       // </div>
-      <ChildComponent {...props} />
+      <Jumbotron {...props} />
     );
   }
 }

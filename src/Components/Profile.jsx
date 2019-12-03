@@ -17,8 +17,24 @@ export default class Profile extends Component {
     }, 100);
   };
   render() {
-    //const {props} = this.state;
-    // ... are used in long queries to propagate the data of ES6 (spread operater)
-    return <JumbotronComponent />;
+    const { LinkedInData } = this.state;
+
+    return (
+      <div>
+        {LinkedInData.name ? (
+          <>
+            <h1>LinkedIn name is {LinkedInData.name}</h1>
+            <h1>LinkedIn surname is {LinkedInData.surname}</h1>
+            <h1>LinkedIn email is {LinkedInData.email}</h1>
+            <h1>LinkedIn bio is {LinkedInData.bio}</h1>
+            <h1>LinkedIn title is {LinkedInData.title}</h1>
+            <h1>LinkedIn area is {LinkedInData.area}</h1>
+            <h1>LinkedIn username is {LinkedInData.username}</h1>
+          </>
+        ) : (
+          <h1>Loading...</h1>
+        )}
+      </div>
+    );
   }
 }

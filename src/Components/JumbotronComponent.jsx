@@ -1,8 +1,7 @@
-import React, {Component} from 'react'; 
-import { Jumbotron, Container,} from 'reactstrap';
-import { FaPencilAlt } from 'react-icons/fa';
-import Modal from './Modal';
-import Profile from './Profile';
+import React, { Component } from "react";
+import { Jumbotron, Container } from "reactstrap";
+import { FaPencilAlt } from "react-icons/fa";
+import Modal from "./Modal";
 
 class JumbotronComponent extends Component {
 
@@ -22,7 +21,7 @@ class JumbotronComponent extends Component {
             </Container>
         </div>
     );
-};
+  }
 }
 
 export default JumbotronComponent;

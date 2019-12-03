@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getProfile } from "../Services/ProfileCRUD";
-import JumbotronComponent from "./JumbotronComponent"
+import JumbotronComponent from "./JumbotronComponent";
 
 export default class Profile extends Component {
   constructor(props) {

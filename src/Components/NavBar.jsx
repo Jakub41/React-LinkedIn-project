@@ -18,9 +18,7 @@ import {
 import { IconContext } from "react-icons";
 
 const NavBar = props => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
@@ -96,10 +94,9 @@ const NavBar = props => {
                         </NavLink>
                     </NavItem>
                 </Container>
-
-            </Navbar>
-        </>
-    );
-};
+                </Navbar>
+                </>
+    )
+}
 
 export default NavBar;

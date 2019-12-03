@@ -1,7 +1,7 @@
 import { API_USERNAME, API_PASSWORD } from "./ApiUtils";
 
 export const createProfileAPIQuery = (urlGenerator, method = "GET") => async (
-  body,//body has the information of all {name, surname etc}
+  body, //body has the information of all {name, surname etc}
   ...params
 ) => {
   try {

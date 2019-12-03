@@ -13,9 +13,9 @@ const ModalComponent = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+      <Button color="primary" onClick={toggle}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}>Profile Information</ModalHeader>
         <ModalBody>
             <Form>
               <Row form>
@@ -53,18 +53,14 @@ const ModalComponent = (props) => {
                     <Input type="text" name="zipcode" id="zip" />
                   </FormGroup>
                   <Col>
-                    <FormGroup>
-                      <Label for="education">Education</Label>
-                      <Input type="text" name="education" id="currenteducation" placeholder="recent education" />
-                    </FormGroup>
                   </Col>
                 </Col>
               </Row>
             </Form>
             </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button color="primary" onClick={toggle}>edit</Button>{' '}
+          <Button color="primary" onClick={toggle}>save</Button>
         </ModalFooter>
       </Modal>
     </div>

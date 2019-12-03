@@ -11,17 +11,18 @@ export default class Profile extends Component {
   }
   componentDidMount = async () => {
     const myProfile = await getProfile();// from profileCRUD to fetch all data line 8
-
+     console.log(myProfile);
+     
     setTimeout(() => {
       this.setState({ LinkedInData: myProfile }); // to put data of a profile
     }, 100);
   };
   render() {
-    //const {props} = this.state;
+   const {LinkedInData} = this.state;
 // ... are used in long queries to propagate the data of ES6 (spread operater)
     return (
     
-      <JumbotronComponent />
+      <JumbotronComponent data={LinkedInData} />
     );
   }
 }

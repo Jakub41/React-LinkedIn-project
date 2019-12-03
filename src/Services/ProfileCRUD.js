@@ -11,7 +11,7 @@ export const getProfile = createProfileAPIQuery(() => {
 
 //calling, pass in body, and no other arguments are needed for 'params'
 //addProfile(JSON.stringify(body)).then(...);
-export const add = createProfileAPIQuery(() => {
+export const addProfile = createProfileAPIQuery(() => {
   return `${API_URL}profile`;
 }, "POST");
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getProfile } from "../Services/ProfileCRUD";
 
 export default class Header extends Component {
-  constructor(props) {
+  constructor(...props) {
     super(props);
     this.state = {
       LinkedInData: []
@@ -16,25 +16,26 @@ export default class Header extends Component {
     }, 100);
   };
   render() {
-    const { LinkedInData } = this.state;
+    const { ...props } = this.state;
 
     return (
-      <div>
-        {LinkedInData.name ? (
-          <div>
-            <h1>LinkedIn name is {LinkedInData.name}</h1>
-            <h1>LinkedIn surname is {LinkedInData.surname}</h1>
-            <h1>LinkedIn email is {LinkedInData.email}</h1>
-            <h1>LinkedIn bio is {LinkedInData.bio}</h1>
-            <h1>LinkedIn title is {LinkedInData.title}</h1>
-            <h1>LinkedIn area is {LinkedInData.area}</h1>
-            <h1>LinkedIn username is {LinkedInData.username}</h1>
-            <img src={LinkedInData.image} alt="profile" />
-          </div>
-        ) : (
-          <h1>Loading...</h1>
-        )}
-      </div>
+      // <div>
+      //   {LinkedInData.name ? (
+      //     <div>
+      //       <h1>LinkedIn name is {LinkedInData.name}</h1>
+      //       <h1>LinkedIn surname is {LinkedInData.surname}</h1>
+      //       <h1>LinkedIn email is {LinkedInData.email}</h1>
+      //       <h1>LinkedIn bio is {LinkedInData.bio}</h1>
+      //       <h1>LinkedIn title is {LinkedInData.title}</h1>
+      //       <h1>LinkedIn area is {LinkedInData.area}</h1>
+      //       <h1>LinkedIn username is {LinkedInData.username}</h1>
+      //       <img src={LinkedInData.image} alt="profile" />
+      //     </div>
+      //   ) : (
+      //     <h1>Loading...</h1>
+      //   )}
+      // </div>
+      <ChildComponent {...props} />
     );
   }
 }

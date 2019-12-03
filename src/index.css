@@ -1,7 +1,30 @@
+.input-group {
+  width: 25%!important;
+}
+
 li {
   list-style: none;
 }
 
 .jumbotron {
   background-color: lightblue !important;
+}
+
+.navbar {
+  background-color: #283E4A;
+}
+
+.navbar-brand svg {
+  background-color: #0077B5;
+  padding: 10%;
+}
+
+.nav-link svg{
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+.nav-pic {
+  width: 40px;
+  height: 40px;
 }

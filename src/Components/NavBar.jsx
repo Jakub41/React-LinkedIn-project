@@ -1,102 +1,137 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import {
-    FaLinkedin,
-    FaSearch,
-    FaHome,
-    FaNetworkWired,
-    FaSuitcase,
-    FaArrowCircleDown,
-    FaBookReader
+  FaLinkedinIn,
+  FaSearch,
+  FaHome,
+  FaNetworkWired,
+  FaSuitcase,
+  FaArrowCircleDown,
+  FaBookReader
 } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { TiMessages } from "react-icons/ti";
-import {AiFillSlackSquare} from 'react-icons/ai';
+import { AiFillSlackSquare } from "react-icons/ai";
 import {
-    Container, Input, Navbar, NavbarBrand, NavItem, NavLink, InputGroup,
-    InputGroupAddon, InputGroupText
+  Container,
+  Input,
+  Navbar,
+  NavbarBrand,
+  NavItem,
+  NavLink,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  NavbarToggler,
+  Collapse
 } from "reactstrap";
 import { IconContext } from "react-icons";
 
-const NavBar = props => {
-  const [isOpen, setIsOpen] = useState(false);
+export default class NavBar extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      isOpen: false,
+      isActive: false,
+      isActiveColor: "#000"
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+      isActiveColor: "#fff"
+    });
+  }
+
+  activeLink = () => {
+    this.setState(prevState => ({ linkRefActive: !this.state.linkRefActive }));
+  };
+
+  render() {
     return (
-        <>
-            <Navbar color="dark" light expand="md">
-                <Container>
-                    <NavbarBrand>
-                        <IconContext.Provider value={{ color: "#007fff", size: "2em" }}>
-                            <div>
-                                <FaLinkedin />
-                            </div>
-                        </IconContext.Provider>
-                    </NavbarBrand>
-                    <InputGroup style={{ width: "25%" , padding:"5px"}}>
-                        <Input placeholder="Search" />
-                        <InputGroupAddon addonType="append">
-                            <InputGroupText><div><FaSearch /></div></InputGroupText>
-                        </InputGroupAddon>
-                    </InputGroup>
-                    <NavItem>
-                        <NavLink >
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
-                                <FaHome />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
-                                <FaNetworkWired />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
-                                <FaSuitcase />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
-                                <TiMessages />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
-                                <IoIosNotificationsOutline />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
-                                <FaArrowCircleDown />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
-                                <AiFillSlackSquare />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
-                                <FaBookReader />
-                        </IconContext.Provider>
-                        </NavLink>
-                    </NavItem>
-                </Container>
-                </Navbar>
-                </>
-    )
+      <>
+        <Navbar light expand="md" className="sticky-top">
+          <Container>
+            <NavbarBrand>
+              <IconContext.Provider
+                value={{
+                  color: "#ffff",
+                  size: "2.5em"
+                }}
+              >
+                <FaLinkedinIn />
+              </IconContext.Provider>
+            </NavbarBrand>
+            <InputGroup className="my-2 my-lg-3">
+              <Input placeholder="Search" />
+              <InputGroupAddon addonType="append">
+                <InputGroupText>
+                  <FaSearch />
+                </InputGroupText>
+              </InputGroupAddon>
+            </InputGroup>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse
+              isOpen={this.state.isOpen}
+              navbar
+              className="justify-content-end"
+            >
+              <NavItem>
+                <NavLink href="#">
+                  <FaHome />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">
+                  <FaNetworkWired />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">
+                  <FaSuitcase />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">
+                  <TiMessages />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">
+                  <IoIosNotificationsOutline />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#" onClick={this.activeLink}>
+                  <FaArrowCircleDown />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#" onClick={this.activeLink}>
+                  <AiFillSlackSquare />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">
+                  <FaBookReader />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-pic-set">
+                  <img
+                    src="http://lorempixel.com/output/people-q-c-640-480-8.jpg"
+                    alt="small-profile"
+                    className="rounded-circle nav-pic"
+                  />
+                </NavLink>
+              </NavItem>
+            </Collapse>
+          </Container>
+        </Navbar>
+      </>
+    );
+  }
 }
-
-export default NavBar;

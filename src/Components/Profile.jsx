@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getProfile } from "../Services/ProfileCRUD";
-import { Jumbotron } from "./Jumbotron"
+import JumbotronComponent from "./JumbotronComponent";
 
 export default class Profile extends Component {
   constructor(props) {
@@ -10,18 +10,15 @@ export default class Profile extends Component {
     };
   }
   componentDidMount = async () => {
-    const myProfile = await getProfile();// from profileCRUD to fetch all data line 8
+    const myProfile = await getProfile(); // from profileCRUD to fetch all data line 8
 
     setTimeout(() => {
       this.setState({ LinkedInData: myProfile }); // to put data of a profile
     }, 100);
   };
   render() {
-    const {...LinkedInData} = this.state;
-// ... are used in long queries to propagate the data of ES6 (spread operater)
-    return (
-    
-      <Jumbotron {...LinkedInData} />
-    );
+    const { LinkedInData } = this.state;
+    // ... are used in long queries to propagate the data of ES6 (spread operater)
+    return <JumbotronComponent LinkedInData={LinkedInData} />;
   }
 }

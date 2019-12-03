@@ -13,13 +13,13 @@ export const getProfile = createProfileAPIQuery(() => {
 //addProfile(JSON.stringify(body)).then(...);
 export const addProfile = createProfileAPIQuery(() => {
   return `${API_URL}profile`;
-}, "POST");//creating the profile
+}, "POST"); //creating the profile
 
 //calling, pass in body, and 'Id' will end up as part of 'params'
 //updateProfile(JSON.stringify(body), Id);
 export const updateProfile = createProfileAPIQuery(id => {
   return `${API_URL}profile/${id}`;
-}, "PUT");//id is used to specify whom we are updating
+}, "PUT"); //id is used to specify whom we are updating
 
 export const deleteProfile = createProfileAPIQuery(id => {
   return `${API_URL}profile/${id}`;

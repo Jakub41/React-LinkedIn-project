@@ -8,3 +8,4 @@ export {
   API_USERNAME,
   API_PASSWORD
 }
+//process.env would fetch the data from the .env configuration file

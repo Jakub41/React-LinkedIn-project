@@ -1,7 +1,7 @@
 import { API_USERNAME, API_PASSWORD } from "./ApiUtils";
 
 export const createProfileAPIQuery = (urlGenerator, method = "GET") => async (
-  body,
+  body,//body has the information of all {name, surname etc}
   ...params
 ) => {
   try {
@@ -13,7 +13,7 @@ export const createProfileAPIQuery = (urlGenerator, method = "GET") => async (
       headers: new Headers({
         Authorization: "Basic " + token,
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json" //accepting the Json
       })
     };
     const response = await fetch(url, credentials);

@@ -5,6 +5,7 @@ import Modal from "./Modal";
 
 class JumbotronComponent extends Component {
   render() {
+    const {LinkedInData} = this.props;
     return (
       <div>
         <Container>
@@ -12,13 +13,13 @@ class JumbotronComponent extends Component {
             <h6> User Location</h6>
             <p className="lead">User information.</p>
 
-            <p>Name: {this.props.LinkedInData.name}</p>
-            <p>surname: {this.props.LinkedInData.surname}</p>
-            <p>email: {this.props.LinkedInData.email}</p>
-            <p>bio: {this.props.LinkedInData.bio}</p>
-            <p>title: {this.props.LinkedInData.title}</p>
-            <p>area: {this.props.LinkedInData.area}</p>
-            <p>image: <img src={this.props.LinkedInData.image} alt="profile" /></p>
+            <p>Name: {LinkedInData.name}</p>
+            <p>surname: {LinkedInData.surname}</p>
+            <p>email: {LinkedInData.email}</p>
+            <p>bio: {LinkedInData.bio}</p>
+            <p>title: {LinkedInData.title}</p>
+            <p>area: {LinkedInData.area}</p>
+            <p>image: <img src={LinkedInData.image} alt="profile" /></p>
 
             <div style={{ padding: ".5rem" }}>
               <div className="mx-3 float-right">

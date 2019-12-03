@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
-import Jumbotron from './Jumbotron';
+import JumbotronComponent from './JumbotronComponent';
 
 class MainComponent extends Component {
     render() {
         return (
             <div>
             <NavBar />
-            <Jumbotron />
+            <JumbotronComponent />
             </div>
         );
     }

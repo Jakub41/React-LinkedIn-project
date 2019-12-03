@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getProfile } from "../Services/ProfileCRUD";
-import { Jumbotron } from "./Jumbotron"
+import JumbotronComponent from "./JumbotronComponent"
 
 export default class Profile extends Component {
   constructor(props) {
@@ -17,11 +17,11 @@ export default class Profile extends Component {
     }, 100);
   };
   render() {
-    const {...LinkedInData} = this.state;
+    //const {props} = this.state;
 // ... are used in long queries to propagate the data of ES6 (spread operater)
     return (
     
-      <Jumbotron {...LinkedInData} />
+      <JumbotronComponent />
     );
   }
 }

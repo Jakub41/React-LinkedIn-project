@@ -8,7 +8,6 @@ class MainComponent extends Component {
             <div>
             <NavBar />
             <Jumbotron />
-
             </div>
         );
     }

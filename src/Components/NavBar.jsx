@@ -5,10 +5,12 @@ import {
   FaHome,
   FaNetworkWired,
   FaSuitcase,
-  FaArrowCircleDown
+  FaArrowCircleDown,
+  FaBookReader
 } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { TiMessages } from "react-icons/ti";
+import { AiFillSlackSquare } from "react-icons/ai";
 import {
   Container,
   Input,
@@ -20,6 +22,7 @@ import {
   InputGroupAddon,
   InputGroupText
 } from "reactstrap";
+import { IconContext } from "react-icons";
 
 const NavBar = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,44 +34,76 @@ const NavBar = props => {
       <Navbar color="dark" light expand="md">
         <Container>
           <NavbarBrand>
-            <FaLinkedin />
+            <IconContext.Provider value={{ color: "#007fff", size: "2em" }}>
+              <div>
+                <FaLinkedin />
+              </div>
+            </IconContext.Provider>
           </NavbarBrand>
-          <InputGroup style={{ width: "25%" }}>
+          <InputGroup style={{ width: "25%", padding: "5px" }}>
             <Input placeholder="Search" />
             <InputGroupAddon addonType="append">
               <InputGroupText>
-                <FaSearch />
+                <div>
+                  <FaSearch />
+                </div>
               </InputGroupText>
             </InputGroupAddon>
           </InputGroup>
           <NavItem>
             <NavLink>
-              <FaHome />
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <FaHome />
+              </IconContext.Provider>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <FaNetworkWired />
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <FaNetworkWired />
+              </IconContext.Provider>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <FaSuitcase />
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <FaSuitcase />
+              </IconContext.Provider>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <TiMessages />
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <TiMessages />
+              </IconContext.Provider>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <IoIosNotificationsOutline />
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <IoIosNotificationsOutline />
+              </IconContext.Provider>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <FaArrowCircleDown />
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <FaArrowCircleDown />
+              </IconContext.Provider>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <AiFillSlackSquare />
+              </IconContext.Provider>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
+              <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                <FaBookReader />
+              </IconContext.Provider>
             </NavLink>
           </NavItem>
         </Container>
@@ -76,5 +111,4 @@ const NavBar = props => {
     </>
   );
 };
-
 export default NavBar;

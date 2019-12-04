@@ -68,3 +68,9 @@ li {
   margin-top: 20px;
   display: inline;
 }
+
+.form-pic {
+  width: 100px;
+  height: 100px;
+  margin: 2% 40%;
+}

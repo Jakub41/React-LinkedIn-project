@@ -44,7 +44,7 @@ const ModalComponent = props => {
                     id="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="firstname"
+                    placeholder="First Name"
                   />
                 </FormGroup>
               </Col>
@@ -57,7 +57,7 @@ const ModalComponent = props => {
                     id="surname"
                     value={formData.surname}
                     onChange={handleChange}
-                    placeholder="lastname"
+                    placeholder="Last Name"
                   />
                 </FormGroup>
               </Col>
@@ -81,7 +81,7 @@ const ModalComponent = props => {
                 id="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="Bio"
+                placeholder="Job Title"
               />
             </FormGroup>
             <FormGroup>
@@ -104,6 +104,22 @@ const ModalComponent = props => {
                 value={formData.area}
                 onChange={handleChange}
                 placeholder="Area"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="picture">Picture</Label>
+              <img
+                src={formData.image}
+                alt="profile-form-pic"
+                className="rounded-circle form-pic"
+              />
+              <Input
+                type="url"
+                name="picture"
+                id="picture"
+                value={formData.image}
+                onChange={handleChange}
+                placeholder="Your picture URL"
               />
             </FormGroup>
           </Form>

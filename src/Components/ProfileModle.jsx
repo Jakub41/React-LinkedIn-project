@@ -13,7 +13,7 @@ import {
     Input
 } from "reactstrap";
 
-const NewModalComponent = props => {
+const ProfileModal = props => {
     const { buttonLabel, className } = props;
 
     const [modal, setModal] = useState(false);
@@ -92,4 +92,4 @@ const NewModalComponent = props => {
     );
 };
 
-export default NewModalComponent;
+export default ProfileModal;

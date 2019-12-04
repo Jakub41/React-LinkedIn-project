@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Container } from "reactstrap";
+import { Jumbotron, Container, Row, Col } from "reactstrap";
 import { FaPencilAlt } from "react-icons/fa";
 import Modal from "./Modal";
 
@@ -8,19 +8,31 @@ class JumbotronComponent extends Component {
     const { LinkedInData } = this.props;
     return (
       <div>
-        <Container>
-          <Jumbotron>
-            <h6>
-              {LinkedInData.name} {LinkedInData.surname}
-            </h6>
-            <h6> {LinkedInData.area}</h6>
-            <p className="lead">{LinkedInData.bio}</p>
-            <div style={{ padding: ".5rem" }}>
-              <div className="mx-3 float-right">
-                <Modal buttonLabel={<FaPencilAlt />} />
-              </div>
-            </div>
+        <Container className="profile-container">
+          <Jumbotron id="profile-banner">
           </Jumbotron>
+          <div className="lowerSection">
+            <Row>
+              <Col lg="3" sm="12">
+                <img src={LinkedInData.image} alt="profile-img" className="rounded-circle psize img-area" />
+              </Col>
+            </Row>
+            <Row className="btn-area">
+              <Col lg="2" md="2" sm="2" className="svgimg">
+                <Modal buttonLabel={<FaPencilAlt />} />
+              </Col>
+            </Row>
+            <Row>
+              <Col lg="6" md="6" sm="12" className="info">
+                <h3>{LinkedInData.name} {LinkedInData.surname}</h3>
+                <h5 className="prrofile-text">{LinkedInData.area}</h5>
+                <h5 className="prrofile-text">{LinkedInData.title}</h5>
+              </Col>
+              <Col lg="4" md="4" sm="12" className="info">
+                <h5 className="prrofile-text">{LinkedInData.bio}</h5>
+              </Col>
+            </Row>
+          </div>
         </Container>
       </div>
     );

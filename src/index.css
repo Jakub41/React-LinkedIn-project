@@ -1,25 +1,21 @@
 .input-group {
-  width: 25%!important;
+  width: 25% !important;
 }
 
 li {
   list-style: none;
 }
 
-.jumbotron {
-  background-color: lightblue !important;
-}
-
 .navbar {
-  background-color: #283E4A;
+  background-color: #283e4a;
 }
 
 .navbar-brand svg {
-  background-color: #0077B5;
+  background-color: #0077b5;
   padding: 10%;
 }
 
-.nav-link svg{
+.nav-link svg {
   color: #ffffff;
   font-size: 1.5em;
 }
@@ -27,4 +23,48 @@ li {
 .nav-pic {
   width: 40px;
   height: 40px;
+}
+
+.profile-container {
+  box-shadow: 1px 1px 1px 1px #d3d3d3;
+}
+
+#profile-banner {
+  width: 100%;
+  height: 300px;
+  background-color: lightblue !important;
+  background-image: url("./Media/banner.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.psize {
+  width: 152px;
+  height: 152px;
+  position: ;
+}
+
+.img-area {
+  margin-top: -100px;
+}
+
+.btn-area {
+  float: right;
+  margin-top: -40px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: -60px;
+}
+
+.svgimg{
+	margin-top: -25px;
+}
+
+.profile-text {
+  font-weight: 400;
+}
+
+.info {
+  margin-top: 20px;
+  display: inline;
 }

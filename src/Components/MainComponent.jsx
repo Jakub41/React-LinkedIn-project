@@ -4,13 +4,17 @@ import NewJumbotron from "./NewJumbotron";
 import Profile from "./Profile";
 
 class MainComponent extends Component {
+  setProfile = photo => {
+    this.childComponent.setProfile(photo);
+  };
+
   render() {
     return (
-      <div>
-        <NavBar />
-        <Profile />
+      <>
+        <NavBar onRefs={ref => (this.childComponent = ref)} />
+        <Profile setProfile={this.setProfile} />
         <NewJumbotron />
-      </div>
+      </>
     );
   }
 }

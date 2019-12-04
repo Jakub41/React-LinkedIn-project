@@ -14,16 +14,22 @@ import {
 } from "reactstrap";
 
 const ModalComponent = props => {
-  const { buttonLabel, className } = props;
+  const { buttonLabel, className, formData, handleChange } = props;
 
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
 
+  const handleSubmit = () => {
+    props.handleSubmit();
+    toggle();
+  };
+
   return (
     <>
-      
-      <Button color="primary" onClick={toggle}>{buttonLabel}</Button>
+      <Button color="primary" onClick={toggle}>
+        {buttonLabel}
+      </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Profile Information</ModalHeader>
         <ModalBody>
@@ -31,67 +37,84 @@ const ModalComponent = props => {
             <Row form>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="firstName">First Name*</Label>
+                  <Label for="firstName">Name*</Label>
                   <Input
                     type="text"
-                    name="first"
-                    id="firstname"
+                    name="name"
+                    id="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="firstname"
                   />
                 </FormGroup>
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="lastname">Last Name*</Label>
+                  <Label for="lastname">Surname*</Label>
                   <Input
                     type="text"
-                    name="password"
-                    id="lastname"
+                    name="surname"
+                    id="surname"
+                    value={formData.surname}
+                    onChange={handleChange}
                     placeholder="lastname"
                   />
                 </FormGroup>
               </Col>
             </Row>
             <FormGroup>
-              <Label for="headline">Headline</Label>
+              <Label for="headline">Email*</Label>
               <Input
                 type="text"
-                name="head"
-                id="headline"
-                placeholder="profile heading"
+                name="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
               />
             </FormGroup>
             <FormGroup>
-              <Label for="education">Education</Label>
+              <Label for="bio">Title</Label>
               <Input
                 type="text"
-                name="edu"
-                id="education"
-                placeholder="highest degree"
+                name="title"
+                id="title"
+                value={formData.title}
+                onChange={handleChange}
+                placeholder="Bio"
               />
             </FormGroup>
-            <Row form>
-              <Col md={6}>
-                <FormGroup>
-                  <Label for="country">Country/Region</Label>
-                  <Input type="text" name="country" id="countryname" />
-                </FormGroup>
-              </Col>
-              <Col md={4}>
-                <FormGroup>
-                  <Label for="exampleZip">Zip</Label>
-                  <Input type="text" name="zipcode" id="zip" />
-                </FormGroup>
-                <Col>
-                  
-                  </Col>
-                </Col>
-              </Row>
-            </Form>
-            </ModalBody>
+            <FormGroup>
+              <Label for="bio">Bio</Label>
+              <Input
+                type="textarea"
+                name="bio"
+                id="bio"
+                value={formData.bio}
+                onChange={handleChange}
+                placeholder="Bio"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="area">Area</Label>
+              <Input
+                type="text"
+                name="area"
+                id="area"
+                value={formData.area}
+                onChange={handleChange}
+                placeholder="Area"
+              />
+            </FormGroup>
+          </Form>
+        </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>edit</Button>{' '}
-          <Button color="primary" onClick={toggle}>save</Button>
+          <Button color="primary" onClick={toggle}>
+            cancel
+          </Button>{" "}
+          <Button color="primary" onClick={handleSubmit}>
+            save
+          </Button>
         </ModalFooter>
       </Modal>
     </>

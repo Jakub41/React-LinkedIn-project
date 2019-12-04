@@ -33,11 +33,24 @@ export default class NavBar extends Component {
     this.state = {
       isOpen: false,
       isActive: false,
-      isActiveColor: "#000"
+      isActiveColor: "#000",
+      photo: ""
     };
 
     this.toggle = this.toggle.bind(this);
   }
+
+  componentDidMount() {
+    this.props.onRefs(this);
+  }
+
+  componentWillUnmount() {
+    this.props.onRefs(undefined);
+  }
+
+  setProfile = photo => {
+    this.setState({ photo });
+  };
 
   toggle() {
     this.setState({
@@ -47,7 +60,9 @@ export default class NavBar extends Component {
   }
 
   activeLink = () => {
-    this.setState(prevState => ({ linkRefActive: !this.state.linkRefActive }));
+    this.setState(prevState => ({
+      linkRefActive: !this.state.linkRefActive
+    }));
   };
 
   render() {
@@ -122,7 +137,10 @@ export default class NavBar extends Component {
               <NavItem>
                 <NavLink className="nav-pic-set">
                   <img
-                    src="http://lorempixel.com/output/people-q-c-640-480-8.jpg"
+                    src={
+                      this.state.photo ||
+                      "http://lorempixel.com/output/people-q-c-640-480-8.jpg"
+                    }
                     alt="small-profile"
                     className="rounded-circle nav-pic"
                   />

@@ -5,3 +5,10 @@ li {
 .jumbotron {
   background-color: lightblue !important;
 }
+.nav-item-div {
+  width: 80px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  margin: 8px 0px 0px;
+}

@@ -38,60 +38,68 @@ const NavBar = props => {
                         </InputGroupAddon>
                     </InputGroup>
                     <NavItem>
-                        <NavLink >
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
-                                <FaHome />
-                        </IconContext.Provider>
-                        </NavLink>
+                    <div className='nav-item-div'>
+                    <IconContext.Provider value={{ color: "white",  size: "2em"}}>
+                    <FaHome /></IconContext.Provider>
+                    <NavLink href='#'>Home</NavLink>
+                    </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
-                                <FaNetworkWired />
-                        </IconContext.Provider>
-                        </NavLink>
+                    <div className='nav-item-div'>
+                    <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
+                        <FaNetworkWired /></IconContext.Provider>
+                        <NavLink href='#'>Network</NavLink>
+                    </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
+                    <div className='nav-item-div'>
+                    <IconContext.Provider value={{ color: "white",  size: "2em"  }}>
                                 <FaSuitcase />
                         </IconContext.Provider>
-                        </NavLink>
+                    <NavLink href='#'>Jobs</NavLink>
+                        </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em"  }}>
+                    <div className='nav-item-div'>
+                    <IconContext.Provider value={{ color: "white",  size: "2em"  }}>
                                 <TiMessages />
                         </IconContext.Provider>
-                        </NavLink>
+                    <NavLink href='#'>Messaging</NavLink>
+                       
+                        </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
+                    <div className='nav-item-div'>
+                    <IconContext.Provider value={{ color: "white", size: "2em" }}>
                                 <IoIosNotificationsOutline />
                         </IconContext.Provider>
-                        </NavLink>
+                    <NavLink href='#'>Notifications</NavLink>
+                    </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
-                        <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
+                    <div className='nav-item-div'>
+                    <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
                                 <FaArrowCircleDown />
                         </IconContext.Provider>
-                        </NavLink>
+                    <NavLink href='#'>Me</NavLink>
+                        
+                        </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
+                    <div className='nav-item-div'>
                         <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
                                 <AiFillSlackSquare />
                         </IconContext.Provider>
-                        </NavLink>
+                        <NavLink href='#'>Work</NavLink>
+                    </div>
                     </NavItem>
                     <NavItem>
-                        <NavLink>
+                    <div className='nav-item-div'>
                         <IconContext.Provider value={{ color: "white",  size: "1.5em" }}>
                                 <FaBookReader />
                         </IconContext.Provider>
-                        </NavLink>
+                        <NavLink href='#'>Learning</NavLink>
+                    </div>
                     </NavItem>
                 </Container>
                 </Navbar>

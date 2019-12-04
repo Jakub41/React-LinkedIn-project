@@ -10,10 +10,11 @@ class JumbotronComponent extends Component {
       <div>
         <Container>
           <Jumbotron>
+          <img src={LinkedInData.image} />
             <h6>
               {LinkedInData.name} {LinkedInData.surname}
             </h6>
-            <h6> {LinkedInData.area}</h6>
+            <h6>{LinkedInData.area}</h6>
             <p className="lead">{LinkedInData.bio}</p>
             <div style={{ padding: ".5rem" }}>
               <div className="mx-3 float-right">

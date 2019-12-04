@@ -13,11 +13,12 @@ import {
   Input
 } from "reactstrap";
 
+
+
+
 const ModalComponent = props => {
   const { buttonLabel, className } = props;
-
   const [modal, setModal] = useState(false);
-
   const toggle = () => setModal(!modal);
 
   return (

@@ -3,7 +3,7 @@ import {Jumbotron, Container} from 'reactstrap';
 import { FaPencilAlt } from "react-icons/fa";
 import NewModal from './NewModule';
 
-class NewJumbotron extends Component {
+class ProfileJumbotron extends Component {
     render() {
         return (
             <div>
@@ -24,4 +24,4 @@ class NewJumbotron extends Component {
     }
 
 
-export default NewJumbotron;
+export default ProfileJumbotron;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
-import NewJumbotron from "./NewJumbotron";
+import ProfileJumbotron from './ProfileJumbotron';
 import Profile from "./Profile";
 
 class MainComponent extends Component {
@@ -9,7 +9,7 @@ class MainComponent extends Component {
       <div>
         <NavBar />
         <Profile />
-        <NewJumbotron />
+        <ProfileJumbotron />
       </div>
     );
   }

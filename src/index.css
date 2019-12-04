@@ -12,3 +12,7 @@ li {
   text-align: center;
   margin: 8px 0px 0px;
 }
+.profile-background-image {
+  background-image: url('./Images/banner.JPG');
+  height: 310px;
+}

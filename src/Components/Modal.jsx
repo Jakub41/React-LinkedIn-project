@@ -107,7 +107,7 @@ const ModalComponent = props => {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="picture">Picture</Label>
+              <Label for="image">Picture</Label>
               <img
                 src={formData.image}
                 alt="profile-form-pic"
@@ -115,8 +115,8 @@ const ModalComponent = props => {
               />
               <Input
                 type="url"
-                name="picture"
-                id="picture"
+                name="image"
+                id="image"
                 value={formData.image}
                 onChange={handleChange}
                 placeholder="Your picture URL"

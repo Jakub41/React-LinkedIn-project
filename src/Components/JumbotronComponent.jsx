@@ -38,11 +38,11 @@ class JumbotronComponent extends Component {
                 <h3>
                   {LinkedInData.name} {LinkedInData.surname}
                 </h3>
-                <h5 className="prrofile-text">{LinkedInData.area}</h5>
-                <h5 className="prrofile-text">{LinkedInData.title}</h5>
+                <h5 className="profile-text">{LinkedInData.area}</h5>
+                <h5 className="profile-text">{LinkedInData.title}</h5>
               </Col>
               <Col lg="4" md="4" sm="12" className="info">
-                <h5 className="prrofile-text">{LinkedInData.bio}</h5>
+                <h5 className="profile-text">{LinkedInData.bio}</h5>
               </Col>
             </Row>
           </div>
